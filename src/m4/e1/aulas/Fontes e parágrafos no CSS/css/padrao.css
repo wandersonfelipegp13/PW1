@@ -1,0 +1,23 @@
+body {
+    background-color: #141417;
+}
+
+p {
+    font-family: Consolas, impact;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: bold;
+    text-align: justify;
+    color: #EA3333;
+}
+
+#segundo {
+    text-align: center;
+    color: #00D14C;
+    font-family: impact;
+}
+
+h1, h2, h3 {
+    text-align: center;
+    color: #CCAD00;
+}
