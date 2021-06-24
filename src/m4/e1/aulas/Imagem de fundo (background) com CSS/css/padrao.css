@@ -1,0 +1,30 @@
+body {
+    background-color: #141417;
+    background-image: url("../img/fundo.jpg");
+    /* background-repeat: repeat-x; */
+    background-repeat: no-repeat;
+    /* background-size: 100% 100%; */
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+p, a {
+    font-family: Consolas, impact;
+    font-size: 20px;
+    /* font-style: italic; */
+    font-weight: bold;
+    text-align: justify;
+    color: #00D14C;
+    text-indent: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #F2CA04;
+}
+
+a {
+    text-align: center;
+    color: #2CC5E0;
+}
