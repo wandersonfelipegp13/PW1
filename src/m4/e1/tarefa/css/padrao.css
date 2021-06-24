@@ -21,17 +21,28 @@ body {
 }
 
 #barra {
+    display: block;
     color: #D9DAFC;
     font-family: Consolas;
     background: #181C26;
-    padding: 0.3em;
+    padding: 0.5em 0.5em;
+    overflow: hidden;   
 }
 
-#logo, #link {
-    width: 3%;
+#barra img {
+    border-radius: 50%;
+    width: 35%;
+}
+
+#logo, #mid {
+    float: left;
 }
 
 #link {
+    float: right;
+}
+
+#link img {
     float: right;
 }
 
@@ -77,10 +88,6 @@ body {
     overflow: hidden;
 }
 
-.d div img {
-    height: 100%;
-}
-
 #web {
     background-image: url("../img/web.jpg");
     background-repeat: no-repeat;
@@ -90,6 +97,6 @@ body {
 }
 
 #texto {
-    text-indent: 1em;
+    text-indent: 2.5em;
     margin-top: 1em;
 }
