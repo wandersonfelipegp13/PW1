@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #141417;
+    font-family: Consolas, impact;
+}
+
+#a {
+    background-color: #E000D8;
+    /* width: 100%; */
+    height: 2em;
+    border: 30px ridge #0DDB8C;
+    
+    font-size: 1.8em;
+    font-weight: bold;
+    text-align: center;
+    color: #08086B;
+    
+}
