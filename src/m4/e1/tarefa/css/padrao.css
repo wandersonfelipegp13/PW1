@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #141417;
+    font-family: Consolas, Arial;
+    font-size: 1.4em;
+    font-style: normal;
+    font-weight: bold;
+    text-align: justify;
+    color: #EA3333;
+    
+    /* Imagem de fundo */
+    background-image: url("../img/fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+}
+
+#barra {
+    color: #D9DAFC;
+    font-family: Consolas;
+    background: #181C26;
+    padding: 0.3em;
+}
+
+#logo, #link {
+    width: 3%;
+}
+
+#link {
+    float: right;
+}
+
+.c {
+    margin: 2em;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    align-items: stretch;
+}
+
+.c div {
+    margin: 0em 1em;
+    width: 50%;
+    border: 0.05em solid #04D3A3;
+    background-color: #181C26;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    color: #8B9099;
+}
+
+.c p {
+    margin-top: 0.5em;
+    font-size: 0.7em;
+}
+
+.d {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    align-items: stretch;
+    margin: 3em;
+    background: #181C26;
+    border: 0.05em solid #04D3A3;
+    border-radius: 0.3em;
+}
+
+.d div {
+    margin: 1em;
+    padding: 0.5em;
+    color: #8B9099;
+    width: 50%;
+    overflow: hidden;
+}
+
+.d div img {
+    height: 100%;
+}
+
+#web {
+    background-image: url("../img/web.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 1em;
+}
+
+#texto {
+    text-indent: 1em;
+    margin-top: 1em;
+}
