@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #1A1F23;
+    
+     /* Imagem de fundo */
+    background-image: url("../img/fundo.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
+}
+
+.menubar {
+    width: 100%;
+    background-color: #172533;
+    min-height: 4em;
+    padding: 1%;
+    display: flex;
+}
+
+.menulogo, .menusouce {
+    width: 5%;
+}
+
+.menucontent {
+    width: 88%;
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.menucontent a {
+    color: #C6DCF2;
+    text-decoration: none;
+}
+
+.menulogo img, .menusouce img {
+    border-radius: 50%;
+    width: 3em;
+}
+
+.menusouce img {
+    float: right;
+}
+
+.menusouce {
+    float: right;
+}
+
