@@ -93,3 +93,25 @@ body {
     color: #C6DCF2;
     text-decoration: none;
 }
+
+footer {
+    display: flex;
+    background-color: #172533;
+    min-height: 5em;
+    padding: 2em;
+}
+
+#redes-sociais {
+    width: 100%;
+    text-align: center;
+}
+
+#redes-sociais a {
+    text-decoration: none;
+    margin: 0em 0.5em;
+}
+
+#redes-sociais img {
+    width: 2.5em;
+    border-radius: 50%;
+}
