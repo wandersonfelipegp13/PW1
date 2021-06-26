@@ -1,6 +1,8 @@
 * {
     margin: 0;
     padding: 0;
+    
+    --branco-azulado: #C6DCF2;
 }
 
 body {
@@ -68,6 +70,7 @@ body {
     padding: 1em;
     width: 25%;
     font-family: 'Roboto Mono', monospace;
+    overflow: hidden;
 }
 
 .bloco-titulo {
@@ -114,4 +117,40 @@ footer {
 #redes-sociais img {
     width: 2.5em;
     border-radius: 50%;
+}
+
+.vulcao {
+    display: flex;
+    margin: 2em;
+    border: .1em solid #748FA8;
+    padding: 1em;
+    overflow: hidden;
+    border-radius: 1.5em;
+    background-color: rgba(47, 51, 66, 0.9);
+}
+
+.vulcao-info {
+    width: 35%;
+    font-family: Consolas;
+}
+
+.vulcao-img {
+    margin-left: 2em;
+    width: 65%;
+}
+
+.vulcao-img img {
+    width: 100%;
+    border-radius: 1.5em;
+}
+
+.vulcao-info h1, h2, p {
+    color: var(--branco-azulado);
+}
+
+.vulcao-info p {
+    margin-top: 1em;
+    text-indent: 2.5em;
+    text-align: justify;
+    font-size: 1.2em;
 }
