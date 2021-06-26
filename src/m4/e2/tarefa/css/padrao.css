@@ -3,6 +3,8 @@
     padding: 0;
     
     --branco-azulado: #C6DCF2;
+    --verde-sucesso: #03B500;
+    --verde-borda: #0B5909;
 }
 
 body {
@@ -162,12 +164,16 @@ footer {
     display: block;
     width: 100%;
     text-align: center;
+    background-color: var(--verde-sucesso);
+    border-radius: 1em;
+    margin-top: 1em;
+    padding: 0.5em;
+    border: .3em solid var(--verde-borda);
 }
 
 .navegar img {
     width: 3em;
     border-radius: 50%;
-    margin-top: 1em;
 }
 
 .esquerda {
