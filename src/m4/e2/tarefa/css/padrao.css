@@ -120,13 +120,16 @@ footer {
 }
 
 .vulcao {
-    display: flex;
-    margin: 2em;
     border: .1em solid #748FA8;
+    margin: 2em;    
     padding: 1em;
     overflow: hidden;
     border-radius: 1.5em;
     background-color: rgba(47, 51, 66, 0.9);
+}
+
+.vulcao-row {
+    display: flex;
 }
 
 .vulcao-info {
@@ -153,4 +156,24 @@ footer {
     text-indent: 2.5em;
     text-align: justify;
     font-size: 1.2em;
+}
+
+.navegar {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.navegar img {
+    width: 3em;
+    border-radius: 50%;
+    margin-top: 1em;
+}
+
+.esquerda {
+    float: left;
+}
+
+.direita {
+    float: right;
 }
