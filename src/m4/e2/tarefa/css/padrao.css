@@ -57,6 +57,7 @@ body {
 
 .conteudo-row {
     display: flex;
+    align-items: stretch;
 }
 
 .bloco {
@@ -65,6 +66,7 @@ body {
     border: .1em solid #748FA8;
     border-radius: 1em;
     padding: 1em;
+    width: 25%;
     font-family: 'Roboto Mono', monospace;
 }
 
@@ -81,6 +83,7 @@ body {
 
 .bloco-butao {
     text-align: center;
+    border: 0.3em solid #306899;
     border-radius: 1em;
     background-color: #123456;
 }
