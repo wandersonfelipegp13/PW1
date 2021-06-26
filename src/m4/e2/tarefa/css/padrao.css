@@ -51,3 +51,42 @@ body {
     float: right;
 }
 
+.conteudo {
+    margin: 2em;
+}
+
+.conteudo-row {
+    display: flex;
+}
+
+.bloco {
+    margin: 1em;
+    background-color: #172533;
+    border: .1em solid #748FA8;
+    border-radius: 1em;
+    padding: 1em;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.bloco-titulo {
+    color: #C6DCF2;
+    font-size: 1em;
+    margin-bottom: 0.5em;
+}
+
+.bloco-conteudo img {
+    border-radius: 1em;
+    width: 100%;
+}
+
+.bloco-butao {
+    text-align: center;
+    border-radius: 1em;
+    background-color: #123456;
+}
+
+.bloco-butao a {
+    width: 100%;
+    color: #C6DCF2;
+    text-decoration: none;
+}
