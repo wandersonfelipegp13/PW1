@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+    --fundo: #1C1C1C;
+    --vermei: #C40F48;
+}
+
+body {
+    background-color: var(--fundo);
+}
+
+.container {
+    margin: 0 1em;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+    margin-top: 1em;
+}
+
+.bloco {
+    width: 33.33%;
+    text-align: center;
+    margin: 0 1em;
+}
+
+.bloco img {
+    border: 0.4em solid var(--vermei);
+    border-radius: 1.5em;
+    
+}
