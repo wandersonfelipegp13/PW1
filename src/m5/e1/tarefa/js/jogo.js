@@ -1,21 +1,20 @@
- var cartas = [ 0, 0, 0, 0, 0, 0 ];
- var acerto = [ 0, 0, 0, 0, 0, 0 ];
- var viradas = 0;
+ 
+var cartas = [ 0, 0, 0, 0, 0, 0 ];
+var acerto = [ 0, 0, 0, 0, 0, 0 ];
+var viradas = 0;
  
 embaralha();
 
 function embaralha() {
     
-    var i;
-    for (i = 0; i < cartas.length; i++) {
-        var loop = true;
+    for (var i = 0; i < cartas.length; i++) {
         var ok = false;
-        var repitidos = 0 ;
         var num;
-        while (loop) {
+        while (true) {
+            var repitidos = 0;
             num = Math.floor(Math.random() * 3 + 1);
-            for (let value of cartas) {
-                if (value == num) {
+            for (let carta of cartas) {
+                if (carta == num) {
                     repitidos++;
                     if (repitidos > 1) {
                         ok = false;
@@ -26,7 +25,6 @@ function embaralha() {
                 }
             }
             if (ok) {
-                // loop = false;
                 break;
             }
         }
@@ -35,24 +33,25 @@ function embaralha() {
     
 }
 
-function vira(carta) {
+function vira(carta, element) {
     
-    viradas++;
-    
-    var c = document.getElementsByTagName("img");
-    
-    for (var z = 0; z < cartas.length; z++) {
-        c[z].src = "img/star.png";
-    }
-    
-    if (carta == 1) {
-        document.getElementById("carta1").src = "img/star.png";
-    } else if (carta == 2) {
-        document.getElementById("carta1").src = "img/ray.png";
-    } else {
-       document.getElementById("carta1").src = "img/core.png";
-    }
+    // viradas++;
+    element.src = pickImage(cartas[carta - 1]);
+    console.log("Carta: " + carta + ", Posição: " + cartas[carta - 1]);
   
+}
+
+function pickImage(posicao){
+    
+    var caminho = "img/";
+    if(posicao == 1)
+        caminho += "star";
+    else if(posicao == 2)
+        caminho += "ray";
+    else
+        caminho += "core";
+
+    return caminho + ".png";
 }
 
 function pontuacao() {
