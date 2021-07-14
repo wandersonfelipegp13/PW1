@@ -4,7 +4,6 @@ var viradas;
 var valCarta1;
 var valCarta2;
 var segundos;
-var miliseg;
 var nick;
 var score = window.sessionStorage.getItem('score');
 var anterior;
@@ -20,9 +19,6 @@ document.getElementById("score").innerHTML = score;
 
 function play(){
     document.getElementById("menu").style.visibility = "hidden";
-    // document.getElementById("menu").style.display = "none";
-    // document.getElementById("main").style.visibility = "visible";
-    // document.getElementById("main").style.display = "block";
     reseta();   
     embaralha();
     tempo();
@@ -36,7 +32,6 @@ function reseta(){
     valCarta1 = 0;
     valCarta2 = 0;
     segundos = 15;
-    miliseg = 0;
     anterior = null;
 }
 
@@ -134,9 +129,6 @@ function tempo(){
             clearInterval(t);
             setTimeout(function(){
                 document.getElementById("menu").style.visibility = "visible";
-                // document.getElementById("menu").style.display = "block";
-                // document.getElementById("main").style.visibility = "hidden";
-                // document.getElementById("main").style.display = "none";
 
                 if(winLose()){
                     score++;
