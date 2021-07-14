@@ -5,10 +5,25 @@ var valCarta1;
 var valCarta2;
 var segundos;
 var miliseg;
+var nick;
+var score = window.sessionStorage.getItem('score');
+var anterior;
+
+nick = prompt("Nome: ");
+if(nick == "")
+    nick = "player";
+document.getElementById("nick").innerHTML = nick;
+
+if(score == null)
+    score = 0;
+document.getElementById("score").innerHTML = score;
 
 function play(){
     document.getElementById("menu").style.visibility = "hidden";
-    reseta();
+    // document.getElementById("menu").style.display = "none";
+    // document.getElementById("main").style.visibility = "visible";
+    // document.getElementById("main").style.display = "block";
+    reseta();   
     embaralha();
     tempo();
     desvira();  
@@ -20,8 +35,9 @@ function reseta(){
     viradas = 0;
     valCarta1 = 0;
     valCarta2 = 0;
-    segundos = 10;
+    segundos = 15;
     miliseg = 0;
+    anterior = null;
 }
 
 function embaralha() {
@@ -56,14 +72,22 @@ function vira(carta, element) {
     
     viradas++;
 
-    if(viradas == 2){
-        element.src = pickImage(cartas[carta - 1]);
-        valCarta2 = cartas[carta - 1];
+    if(element != anterior){
+
+        if(viradas == 2){
+            anterior = element;
+            element.src = pickImage(cartas[carta - 1]);
+            valCarta2 = cartas[carta - 1];
+            setTimeout(desvira, 1000);
+        } 
+        if(viradas == 1) {
+            anterior = element;
+            element.src = pickImage(cartas[carta - 1]);
+            valCarta1 = cartas[carta - 1];
+        }
+    } else {
         setTimeout(desvira, 1000);
-    } 
-    if(viradas == 1) {
-        element.src = pickImage(cartas[carta - 1]);
-        valCarta1 = cartas[carta - 1];
+        anterior = null;
     }
     
 }
@@ -80,17 +104,9 @@ function pickImage(posicao){
 
     return caminho + ".png";
 }
-
-function pontuacao() {
-    if (viradas == 3) {
-        desvira();
-        viradas = 0;
-    }
-}
  
 function desvira() {
 
-    
     if(valCarta1 == valCarta2){
         for (var j = 0; j < cartas.length; j++) {
             if(cartas[j] == valCarta1){
@@ -118,6 +134,17 @@ function tempo(){
             clearInterval(t);
             setTimeout(function(){
                 document.getElementById("menu").style.visibility = "visible";
+                // document.getElementById("menu").style.display = "block";
+                // document.getElementById("main").style.visibility = "hidden";
+                // document.getElementById("main").style.display = "none";
+
+                if(winLose()){
+                    score++;
+                    window.sessionStorage.setItem('score', score);
+                }
+                console.log(window.sessionStorage.getItem('score'));
+                document.getElementById("score").innerHTML = score;
+
             }, 1000); 
         }
 
@@ -133,4 +160,11 @@ function tempo(){
 
         document.getElementById("segundos").innerHTML = segundos;
   	}, 1000);
+}
+
+function winLose(){
+    for (let p of acerto)
+        if(p == 0)
+            return false;        
+    return true;
 }

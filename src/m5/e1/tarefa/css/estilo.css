@@ -46,28 +46,34 @@ body {
 }
 
 #menu {
-    display: flex;
     position: absolute;
-    margin-top: 0;
+    display: inline-block;
     width: 100%;
     height: 100%;
     background-color: var(--menu);
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
 }
 
 #butao-play {
     width: 40%;
     padding: 1em;
     margin: 0 auto;
+    margin-top: 1em;
     color: var(--branco);
     border: 0.3em solid var(--alert);
     border-radius: 1em;
     background-color: var(--purple);
     margin: auto;
-    
 }
 
 #butao-texto {
-    font-family: 'Orbitron', sans-serif;
     text-align: center;
     font-size: 2em;
+}
+
+#pontos {
+    margin: auto;
+    color: var(--aviso);
+    font-size: 1.5em;
 }
