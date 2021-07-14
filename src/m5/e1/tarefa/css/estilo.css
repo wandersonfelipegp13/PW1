@@ -5,8 +5,11 @@
     --fundo: #1C1C1C;
     --vermei: #C40F48;
     --alert: #da1050;
-    --branco: #f0c0b2;
+    --branco: #baa3f0;
     --verde: #25aa2c;
+    --aviso: #f1ee37;
+    --menu: rgba(52, 40, 109, 0.96);
+    --purple: #3e1c7c;
 }
 
 body {
@@ -40,4 +43,31 @@ body {
     font-family: 'Orbitron', sans-serif;
     font-size: 3em;
     margin: auto;
+}
+
+#menu {
+    display: flex;
+    position: absolute;
+    margin-top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--menu);
+}
+
+#butao-play {
+    width: 40%;
+    padding: 1em;
+    margin: 0 auto;
+    color: var(--branco);
+    border: 0.3em solid var(--alert);
+    border-radius: 1em;
+    background-color: var(--purple);
+    margin: auto;
+    
+}
+
+#butao-texto {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    font-size: 2em;
 }

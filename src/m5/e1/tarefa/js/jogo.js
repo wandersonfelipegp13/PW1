@@ -1,14 +1,28 @@
- 
-var cartas = [ 0, 0, 0, 0, 0, 0 ];
-var acerto = [ 0, 0, 0, 0, 0, 0 ];
-var viradas = 0;
-var valCarta1 = 0;
-var valCarta2 = 0;
-var segundos = 10;
-var miliseg = 0;
+var cartas;
+var acerto;
+var viradas;
+var valCarta1;
+var valCarta2;
+var segundos;
+var miliseg;
 
-embaralha();
-tempo();
+function play(){
+    document.getElementById("menu").style.visibility = "hidden";
+    reseta();
+    embaralha();
+    tempo();
+    desvira();  
+}
+
+function reseta(){
+    cartas = [ 0, 0, 0, 0, 0, 0 ];
+    acerto = [ 0, 0, 0, 0, 0, 0 ];
+    viradas = 0;
+    valCarta1 = 0;
+    valCarta2 = 0;
+    segundos = 10;
+    miliseg = 0;
+}
 
 function embaralha() {
     
@@ -97,11 +111,19 @@ function desvira() {
 
 function tempo(){
     document.getElementById("segundos").innerHTML = segundos;
-    var t = setInterval (function() {
+    var t = setInterval(function() {
     	segundos--;
 
         if(segundos == 0){
-            clearInterval(t);   
+            clearInterval(t);
+            setTimeout(function(){
+                document.getElementById("menu").style.visibility = "visible";
+            }, 1000); 
+        }
+
+        if(segundos < 6){
+            var v = document.getElementsByClassName("timer");
+            v[0].style.color = "var(--aviso)";
         }
 
         if(segundos < 4){
@@ -112,8 +134,3 @@ function tempo(){
         document.getElementById("segundos").innerHTML = segundos;
   	}, 1000);
 }
-
-function corTimer(){
-    
-}
-
