@@ -4,6 +4,9 @@
     
     --fundo: #1C1C1C;
     --vermei: #C40F48;
+    --alert: #da1050;
+    --branco: #f0c0b2;
+    --verde: #25aa2c;
 }
 
 body {
@@ -30,4 +33,11 @@ body {
     border: 0.4em solid var(--vermei);
     border-radius: 1.5em;
     
+}
+
+.timer {
+    color: var(--verde);
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3em;
+    margin: auto;
 }

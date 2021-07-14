@@ -2,8 +2,13 @@
 var cartas = [ 0, 0, 0, 0, 0, 0 ];
 var acerto = [ 0, 0, 0, 0, 0, 0 ];
 var viradas = 0;
- 
+var valCarta1 = 0;
+var valCarta2 = 0;
+var segundos = 10;
+var miliseg = 0;
+
 embaralha();
+tempo();
 
 function embaralha() {
     
@@ -35,10 +40,18 @@ function embaralha() {
 
 function vira(carta, element) {
     
-    // viradas++;
-    element.src = pickImage(cartas[carta - 1]);
-    console.log("Carta: " + carta + ", Posição: " + cartas[carta - 1]);
-  
+    viradas++;
+
+    if(viradas == 2){
+        element.src = pickImage(cartas[carta - 1]);
+        valCarta2 = cartas[carta - 1];
+        setTimeout(desvira, 1000);
+    } 
+    if(viradas == 1) {
+        element.src = pickImage(cartas[carta - 1]);
+        valCarta1 = cartas[carta - 1];
+    }
+    
 }
 
 function pickImage(posicao){
@@ -60,11 +73,47 @@ function pontuacao() {
         viradas = 0;
     }
 }
-
+ 
 function desvira() {
-    for(var cont = 0; cont < acerto.length; cont++) {
-        if (acerto[cont] == 0) {
-            document.getElementById("carta" + (cont + 1) ).src = "img/costas.png";
+
+    
+    if(valCarta1 == valCarta2){
+        for (var j = 0; j < cartas.length; j++) {
+            if(cartas[j] == valCarta1){
+                acerto[j] = 1;
+            }    
         }
     }
+
+    var c = document.querySelectorAll("img");
+    for (var i = 0; i < cartas.length; i++) {
+        if(acerto[i] == 0)
+            c[i].src = "img/costas.png"; 
+    }
+
+    viradas = 0;
+
 }
+
+function tempo(){
+    document.getElementById("segundos").innerHTML = segundos;
+    var t = setInterval (function() {
+    	segundos--;
+
+        if(segundos == 0){
+            clearInterval(t);   
+        }
+
+        if(segundos < 4){
+            var v = document.getElementsByClassName("timer");
+            v[0].style.color = "var(--alert)";
+        }
+
+        document.getElementById("segundos").innerHTML = segundos;
+  	}, 1000);
+}
+
+function corTimer(){
+    
+}
+
