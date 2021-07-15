@@ -19,6 +19,7 @@ document.getElementById("score").innerHTML = score;
 
 function play(){
     document.getElementById("menu").style.visibility = "hidden";
+    document.getElementById("segundos").style.color = "var(--verde)";
     reseta();   
     embaralha();
     tempo();
@@ -36,7 +37,6 @@ function reseta(){
 }
 
 function embaralha() {
-    
     for (var i = 0; i < cartas.length; i++) {
         var ok = false;
         var num;
@@ -125,30 +125,19 @@ function tempo(){
     var t = setInterval(function() {
     	segundos--;
 
-        if(segundos == 0){
-            clearInterval(t);
-            setTimeout(function(){
-                document.getElementById("menu").style.visibility = "visible";
-
-                if(winLose()){
-                    score++;
-                    window.sessionStorage.setItem('score', score);
-                }
-                console.log(window.sessionStorage.getItem('score'));
-                document.getElementById("score").innerHTML = score;
-
-            }, 1000); 
+        if(winLose()){
+            score++;
+            volta(t);
         }
 
-        if(segundos < 6){
-            var v = document.getElementsByClassName("timer");
-            v[0].style.color = "var(--aviso)";
-        }
+        if(segundos == 0)
+            volta(t);
 
-        if(segundos < 4){
-            var v = document.getElementsByClassName("timer");
-            v[0].style.color = "var(--alert)";
-        }
+        if(segundos < 6)
+            document.getElementById("segundos").style.color = "var(--aviso)";
+
+        if(segundos < 4)
+            document.getElementById("segundos").style.color = "var(--alert)";
 
         document.getElementById("segundos").innerHTML = segundos;
   	}, 1000);
@@ -159,4 +148,15 @@ function winLose(){
         if(p == 0)
             return false;        
     return true;
+}
+
+function volta(t) {
+    clearInterval(t);
+    setTimeout(function(){
+        document.getElementById("menu").style.visibility = "visible";
+        console.log(window.sessionStorage.getItem('score'));
+        document.getElementById("score").innerHTML = score;
+
+    }, 1000);
+    window.sessionStorage.setItem('score', score);
 }
