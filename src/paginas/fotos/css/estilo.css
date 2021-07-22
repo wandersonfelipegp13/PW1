@@ -6,6 +6,7 @@
 
     /* Variável que recebe uma cor. */
     --fundo: #D9CEE0;
+    --rosa: #B76656;
 }
 
 body {
@@ -15,7 +16,6 @@ body {
 
 .faixa {
     display: flex;
-    height: 330px;
     margin: 1em 6em;
 }
 
@@ -25,11 +25,14 @@ body {
     text-align: center;
 }
 
-/*
 .foto img {
+    border-bottom: 3px solid var(--rosa);
     width: 100%;
 }
-*/
+
+.foto-imagem {
+    border-bottom: 0.3em solid var(--rosa);
+}
 
 .foto span {
     width: 100%;
