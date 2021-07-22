@@ -39,7 +39,12 @@ body {
 }
 
 .foto a {
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: black;
     text-decoration: none;    
+}
+
+.foto-texto {
+    font-family: 'Prata', serif;
+    margin-top: 1em;
 }
