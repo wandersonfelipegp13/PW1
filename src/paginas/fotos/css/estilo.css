@@ -15,7 +15,9 @@ body {
 }
 
 .faixa {
+    /* Modo de exibição: flex (Um componeste do lado de outro). */
     display: flex;
+    /* Define a margin superior e inferior com 1em e as laterais com 6em. */
     margin: 1em 6em;
 }
 
@@ -26,6 +28,7 @@ body {
 }
 
 .foto img {
+    /* Define uma borda em baixo do componente do tipo solid, com espessura de 3px e cor --rosa. */
     border-bottom: 3px solid var(--rosa);
     width: 100%;
 }
@@ -41,6 +44,7 @@ body {
 .foto a {
     font-size: 1.3em;
     color: black;
+    /* Tira a faixa em baixo do link. */
     text-decoration: none;    
 }
 
