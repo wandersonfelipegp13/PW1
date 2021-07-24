@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <title>IMC</title>
+    </head>
+    <body>
+        <input type="text" name="nome" id="nome" placeholder="Seu nome">
+        <input type="number" name="peso" id="peso" placeholder="Seu peso">
+        <input type="number" name="altura" id="altura" placeholder="Sua altura">
+        <button id="calc" onclick="imc()">Calcular</button>
+        <h2 id="resultado"></h2>
+
+        <h3>O que é IMC?</h3>
+        <p>IMC significa Índice de Massa Corporal e é um parâmetro utilizado para saber se o peso está de acordo com a altura, o que pode interferir diretamente na saúde e qualidade de vida da pessoa. Assim, a partir do resultado do IMC é possível saber também se a pessoa está dentro do peso ideal e também identificar sobrepeso, obesidade ou desnutrição em crianças, adolescentes, adultos ou idosos. </p>
+        <p>Dessa forma, com o cálculo do IMC, é possível fazer algumas mudanças na rotina diária, como mudar a dieta, melhorar os hábitos alimentares e praticar atividade física de forma regular, por exemplo.</p>
+        
+        <h2>Como é calculado?</h2>
+        <p>O IMC é a relação entre peso e altura e o cálculo é feito de acordo com a fórmula: IMC = peso/ (altura x altura), devendo o peso estar em kg e a altura em metro, e o resultado é dado em kg/m2. Depois de obter o resultado, é possível verificar em que faixa o IMC se encontra, podendo indicar:</p>
+
+        <ul>
+            <li>Magreza, quando o resultado é menor que 18,5 kg/m2;</li>
+            <li>Normal, quando o resultado está entre 18,5 e 24,9 kg/m2;</li>
+            <li>Sobrepeso, quando o resultado está entre 24,9 e 30 kg/m2;</li>
+            <li>Obesidade, quando o resultado é maior que 30 kg/m2.</li>
+        <ul>
+
+        <script>
+            function imc() {
+                var nome = document.getElementById("nome").value;
+                var peso = document.getElementById("peso").value;
+                var altura = document.getElementById("altura").value;
+                var resultado = peso / (altura * altura);
+                document.getElementById("resultado").innerHTML = nome + " seu IMC é de " + resultado;
+            }
+        </script>
+    </body>
+</html>
